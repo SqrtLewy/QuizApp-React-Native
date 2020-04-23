@@ -3,6 +3,7 @@ import { StyleSheet, Text, View, Image, Button, ActivityIndicator } from "react-
 import { Link } from "react-router-native";
 import { Ionicons } from "@expo/vector-icons";
 import Questions from "./Questions";
+import About from "./About";
 
 export default class App extends React.Component {
   render() {
@@ -29,6 +30,23 @@ export default class App extends React.Component {
               }}
             >
               Start
+            </Text>
+          </View>
+        </Link>
+		
+		<Link to={`About`} style={styles.aboutbutton} underlayColor="#f0f4f7">
+          <View style={{ display: "flex", flexDirection: "row" }}>
+            <Ionicons name="md-information-circle-outline" size={35} color="white" />
+            <Text
+              style={{
+                color: "white",
+				fontSize: 18,
+                fontWeight: "bold",
+                marginLeft: 10,
+                marginTop: 5
+              }}
+            >
+              About
             </Text>
           </View>
         </Link>

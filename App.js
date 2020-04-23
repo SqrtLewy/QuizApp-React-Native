@@ -3,6 +3,7 @@ import { StyleSheet, Text, View, Image, Button, ActivityIndicator } from "react-
 import { NativeRouter, Route, Link, BackButton } from 'react-router-native'
 import Questions from "./src/screens/Questions";
 import Home from "./src/screens/Home";
+import About from "./src/screens/About";
 
 export default class App extends React.Component {
 
@@ -12,6 +13,7 @@ export default class App extends React.Component {
         <View style={styles.container}>
           <BackButton />
           <Route path='/questions' component = {Questions} />
+		  <Route path='/about' component = {About} />
           <Route exact path='/' component = {Home} />
         </View>
       </NativeRouter>
