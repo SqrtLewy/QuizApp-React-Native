@@ -1,19 +1,42 @@
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React from "react";
+import { StyleSheet, Text, View, Image, Button, ActivityIndicator } from "react-native";
+import { NativeRouter, Route, Link, BackButton } from 'react-router-native'
+import Questions from "./src/screens/Questions";
+import Home from "./src/screens/Home";
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-    </View>
-  );
+export default class App extends React.Component {
+
+  render() {
+    return (
+      <NativeRouter>
+        <View style={styles.container}>
+          <BackButton />
+          <Route path='/questions' component = {Questions} />
+          <Route exact path='/' component = {Home} />
+        </View>
+      </NativeRouter>
+    );
+  }
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    display: 'flex',
+    height: '100%',
+    marginTop: 20,
   },
+
+  header: {
+    fontSize: 20,
+    fontWeight: "bold"
+  },
+
+  info: {
+    fontSize: 16,
+    color: "#777",
+    textAlign: "center",
+    padding: 10,
+    marginTop: 15,
+    lineHeight: 25
+  }
 });
